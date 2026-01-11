@@ -1,6 +1,6 @@
 function binaryConverter() {
     //Input alma
-    const inputBinary = document.getElementById("binaryInput").value;
+    let inputBinary = document.getElementById("binaryInput").value;
 
     // 1. Binary kontrolü
     if (!/^[01]+$/.test(inputBinary)) {
@@ -10,9 +10,16 @@ function binaryConverter() {
     }
 
     // 2. ŞART SAĞLANDIYSA DEVAM
-    //Şimdilik örnek olarak farklı bir işlem yapılacak 
-    let outputNumber = Number(inputBinary)*2
+    let inputNumbers = inputBinary.split("");
+    let outputNumber = 0;
+    let katlar = inputBinary.length - 1;
+    for (let i = 0; i < inputBinary.length; i++) {
+        if (inputNumbers[i] == 1){          
+            outputNumber = outputNumber + 2**katlar
+        }
+        katlar = katlar-1;
+    }
 
     //Output verme
-    document.getElementById("output").textContent = outputNumber;
+    document.getElementById("output").textContent = outputNumber
 }
