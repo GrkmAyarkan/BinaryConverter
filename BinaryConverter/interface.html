@@ -1,0 +1,21 @@
+<!DOCTYPE html> <html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="converter.js"></script>
+</head>
+<body>
+<form id="binaryForm">
+        <input 
+            type="text" 
+            id="binaryInput" 
+            placeholder="Sadece 0 ve 1 giriniz"
+            pattern="[01]+" 
+            required
+        > <!-- pattern="[01]+" Bu kısım sadece 0 ve 1 kullanılabileceğini belirtir, + ise en az bir tane veya daha fazla olması gerektiğini belirtir-->
+        <button onclick="binaryConverter()">Dönüştür</button>
+    </form>
+<p id="output"></p>
+</body>
+</html>
